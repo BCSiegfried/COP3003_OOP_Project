@@ -1,0 +1,35 @@
+.root {
+  -fx-background-color: #3b444b;
+  /*-fx-background-image: url("BackgroundDarkBlue.jpg"); Background image test*/
+  -fx-border-color: #3b444b;
+  -tab-text-color: #FFFFFF;
+}
+
+/*These next two bodies represent the tabs*/
+.tab-pane > .tab-header-area > .headers-region > .tab {
+  -fx-shape: "M300,290 L310,168 L410,168 L421,290 L300,290 z";
+  -fx-background-color:  #3b444b;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+  -fx-shape: "M300,290 L310,168 L410,168 L421,290 L300,290 z";
+  -fx-border-color:#117ACA ;
+  -fx-border-width: 2px;
+
+}
+
+.label {
+  -fx-font-size: 20px;
+  -fx-font-family: Open sans;
+  -fx-text-fill: #FFFFFF;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+  -fx-font-weight: bold;
+  -fx-min-width: 300px;
+  -fx-pref-width: 300px;
+  -fx-max-width: 600px;
+  -fx-alignment: left;
+}
+
+.tab-label {
+  -fx-text-fill: #FFFFFF;
+}
