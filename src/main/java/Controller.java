@@ -1,14 +1,16 @@
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Tab;
-import javafx.scene.layout.AnchorPane;
 
-public class Controller implements Initializable
-{
+public class Controller {
+
+  public void addProduct(){
+    System.out.println("Product added");
+
+  }
+
+  public void buttonRecordProduction() {
+    System.out.println("Record Production button pressed");
+  }
 
   @FXML
   Tab tab1;
@@ -19,10 +21,10 @@ public class Controller implements Initializable
   @FXML
   Tab tab3;
 
+/* Check up on what this code does later, used it to initialize tabs originally
   @Override
   public void initialize(URL location, ResourceBundle resources)
   {
-
     FXMLLoader loader = new FXMLLoader();
     try
     {
@@ -55,5 +57,8 @@ public class Controller implements Initializable
     {
       System.out.println("File not found");
     }
+
+*/
+
   }
-}
+
