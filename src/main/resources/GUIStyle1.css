@@ -27,7 +27,6 @@
   -fx-min-width: 300px;
   -fx-pref-width: 300px;
   -fx-max-width: 600px;
-  -fx-alignment: left;
 }
 
 .tab-label {
