@@ -1,4 +1,9 @@
+/**
+ * @author Brandon Siegfried
+ */
+
 public class MoviePlayer extends Product implements MultimediaControl {
+
   Screen screen;
   MonitorType monitorType;
 
@@ -20,21 +25,24 @@ public class MoviePlayer extends Product implements MultimediaControl {
   }
 
 
-
   //methods for screen and monitorType
-  public void setMonitorType(MonitorType monitorType) {}
-  MonitorType getMonitorType(){
+  public void setMonitorType(MonitorType monitorType) {
+  }
+
+  MonitorType getMonitorType() {
     return monitorType;
   }
 
-  public void getScreen(Screen screen) {}
+  public void getScreen(Screen screen) {
+  }
+
   Screen setScreen() {
     return screen;
   }
 
-  public MoviePlayer(String name, String manufacturer,Screen screen, MonitorType monitorType){
+  public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
     //superclass for Screen
-    super(name, manufacturer,ItemType.Visual);
+    super(name, ItemType.Visual, manufacturer);
     // These are necessary
     this.screen = screen;
     this.monitorType = monitorType;

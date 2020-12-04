@@ -46,12 +46,6 @@ Brandon Siegfried
 ##License
 [License](src/resources/License.txt)
 
-Go to your repository.
-Click on "Create new file" Button.
-Type the file name as License.txt or License.md in the input box next to your repository name, a drop down button appears towards right side.
-Choose the type of license of your choice.
-Click "Commit new file" button at the bottom (Green button) Credit https://stackoverflow.com/questions/31639059/how-to-add-license-to-an-existing-github-project
-To choose a license, see https://choosealicense.com/
 
 ##Acknowledgments
 Scott Vanselow <br>

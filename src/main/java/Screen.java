@@ -1,3 +1,7 @@
+/**
+ * @author Brandon Siegfried
+ */
+
 public class Screen implements ScreenSpec {
 
   String resolution;
@@ -39,8 +43,13 @@ public class Screen implements ScreenSpec {
     this.responseTime = responseTime;
   }
 
+  /**
+   *
+   * @return object data toString method
+   */
   public String toString() {
-    return "Screen:" + '\n' + "Resolution: " + resolution + '\n' +"Refresh rate: " + refreshRate + '\n' + "Response time: " + responseTime;
+    return "Screen:" + '\n' + "Resolution: " + resolution + '\n' + "Refresh rate: " + refreshRate
+        + '\n' + "Response time: " + responseTime;
   }
 
 

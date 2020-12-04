@@ -32,3 +32,15 @@
 .tab-label {
   -fx-text-fill: #FFFFFF;
 }
+
+.choice-box > * {
+  -fx-text-fill: #000000;
+}
+
+.choice-box .menu-item:focused > .label {
+  -fx-text-fill: black;
+}
+
+.choice-box .menu-item > .label {
+  -fx-text-fill: black;
+}
