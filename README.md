@@ -1,5 +1,5 @@
-#Project Title
-####<b>Scenario: </b> <br>
+<b>OOP PROJECT</b> <br>
+<b>Scenario: </b> <br>
 <i>You have been hired to create software for a media player production facility that will keep track of what products are produced.
 Without the software, workers on the production floor are physically producing items and having to write down what is produced in a production log book.
 Management would like the production tracking to be more automated so the workers don't need to spend as much time recording what was produced, the log will be more accurate, and it will be easier to generage production reports.</i>
@@ -10,48 +10,41 @@ The project began development in middle August, and spanned the entirety of the 
 I created this program to show competency in my ability to program, and will continue to add functionality to the program after the class has ended. The program reflects my programming ability, and will serve as a benchmark as my skills improve.
 <br><br>This program was created in COP3003 - Object Oriented Programming at Florida Gulf Coast University.
 
-##Demonstration
+<b>Demonstration</b>
 <i>Program in action</i> <br>
     ![Program gif](src/main/resources/PresentationGif.gif)
 
 
-##Documentation
-Create a docs folder in your project. If using Java, generate JavaDoc in your IDE. If using C++, use Doxygen. Change repository settings (using Settings at top of page) to use GitHub Pages with your docs folder. Add a link to the javadoc/doxygen index.html file with this markdown: [Text to appear](URL)
-The URL will be YourGitHubUserName.github.io/YourRepositoryName/foldername/filename
-Do not include the docs folder name in your URL.
-Sample: [JavaDoc](gradebuild/javadoc/index.html) * do this repository side
+<b>Documentation</b>
+JavaDocs included <br>
 
-JavaDoc
-
-##Diagrams
+<b>Diagrams</b>
 Class Diagram
 The markdown is ![Diagram](src/main/resources/JavaDiagram.PNG)
 
 
-##Getting Started
+<b>Getting Started</b>
 To run the program, download the executable JAR file within the repository.
 
-##Built With
+<b>Built With</b>
 <li>IntelliJ IDE</li> 
 <li>Scene Builder</li>
 <li>H2(SQL)</li>
 <a href="https://sites.google.com/site/profvanselow/portfolio?authuser=0">Professor Vanselow's wesbite
 </a>
-#Contributing
+<b>Contributing</b>
 The code on this repository is open source. Feel free to contribute!
 
-##Author
+<b>Author</b>
 Brandon Siegfried
 
-##License
+<b>License</b>
 [License](src/resources/License.txt)
 
 
-##Acknowledgments
+<b>Acknowledgments</b>
 Scott Vanselow <br>
 Vladimir Hardy <br>
-Brandon Santiago <br>
-Logan Bahr <br>
 
 Thank you.
 
