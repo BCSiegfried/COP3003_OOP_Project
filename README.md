@@ -23,33 +23,33 @@ Class Diagram
 The markdown is ![Diagram](src/main/resources/JavaDiagram.PNG)
 
 
-<b>Getting Started</b>
+<b>Getting Started</b><br>
 To run the program, download the executable JAR file within the repository.
 
-<b>Built With</b>
+<b>Built With</b><br>
 <li>IntelliJ IDE</li> 
 <li>Scene Builder</li>
 <li>H2(SQL)</li>
 <a href="https://sites.google.com/site/profvanselow/portfolio?authuser=0">Professor Vanselow's wesbite
 </a> <br>
-<b>Contributing</b>
+<b>Contributing</b><br>
 The code on this repository is open source. Feel free to contribute!
 
-<b>Author</b>
+<b>Author</b><br>
 Brandon Siegfried
 
-<b>License</b>
+<b>License</b><br>
 [License](src/resources/License.txt)
 
 
-<b>Acknowledgments</b>
+<b>Acknowledgments</b> <br>
 Scott Vanselow <br>
 Vladimir Hardy <br>
 
 Thank you.
 
-##History
+<b>History</b><br>
 Submission finalized on 12/4/2020
 
-##Key Programming Concepts Utilized
+<b>Key Programming Concepts Utilized</b><br>
 Object Oriented Programming, HTML, CSS, and SQL query language.
