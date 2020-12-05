@@ -31,7 +31,7 @@ To run the program, download the executable JAR file within the repository.
 <li>Scene Builder</li>
 <li>H2(SQL)</li>
 <a href="https://sites.google.com/site/profvanselow/portfolio?authuser=0">Professor Vanselow's wesbite
-</a>
+</a> <br>
 <b>Contributing</b>
 The code on this repository is open source. Feel free to contribute!
 
