@@ -1,4 +1,6 @@
 /**
+ * Interface for MoviePlayer and AudioPlayer classes. Interface methods unused.
+ *
  * @author Brandon Siegfried
  */
 

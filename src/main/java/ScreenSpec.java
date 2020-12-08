@@ -1,4 +1,6 @@
 /**
+ * Interface implemented by class Screen. Interface methods unused.
+ *
  * @author Brandon Siegfried
  */
 
@@ -10,7 +12,7 @@ public interface ScreenSpec {
 
   int getRefreshRate();
 
-  void setRefreshRate(int RefreshRate);
+  void setRefreshRate(int refreshRate);
 
   int getResponseTime();
 

@@ -1,9 +1,10 @@
-/**
- * @author Brandon Siegfried
- */
-
 import java.util.regex.Pattern;
 
+/**
+ * Employee class for creating Employee DB table entries.
+ *
+ * @author Brandon Siegfried
+ */
 
 public class Employee {
 
@@ -13,8 +14,8 @@ public class Employee {
   String password;
   String email;
   /*
-  * Regex patterns for detecting password validity
- */
+   * Regex patterns for detecting password validity
+   */
   static final Pattern UPPER = Pattern.compile("[A-Z]");
   static final Pattern LOWER = Pattern.compile("[a-z]");
   static final Pattern SPECIAL = Pattern.compile("[!$#%]");
@@ -23,8 +24,10 @@ public class Employee {
   static int flagUppercase = 0;
   static int flagSpecial = 0;
 
-
-  final char SPACE = ' ';
+  /**
+   * JavaDocs error from final method declaration.
+   */
+  static final char SPACE = ' ';
 
   public String getName() {
     return name;
@@ -38,8 +41,10 @@ public class Employee {
     return userName;
   }
 
-    /*
-    * SetUserName takes in String name and formats it to meet username convention (bsiegfried)
+  /**
+   * Method for formatting name field in Employee class constructor.
+   *
+   * @param name Takes in name entered from the UI.
    */
   public void setUserName(String name) {
     int nameLength = name.length();
@@ -69,9 +74,12 @@ public class Employee {
   public String getEmail() {
     return email;
   }
-  /*
-  * Uses name to build email, similar to setUsername method
- */
+
+  /**
+   * Method for creating and formatting email field in Employee class constructor.
+   *
+   * @param name name of Employee
+   */
   public void setEmail(String name) {
     int nameLength = name.length(); // redundant
     name = name.toLowerCase();
@@ -93,9 +101,14 @@ public class Employee {
     }
     this.email = firstName + "." + lastName + "@oracleacademy.Test";
   }
-  /*
-  * Initial Employee constructor, available on the employee tab
- */
+
+  /**
+   * Constructor for taking in textfields of UI and converting name into Email and Username fields.
+   * Verifies applicable password.
+   *
+   * @param name     Name of employee.
+   * @param password Password of employee.
+   */
   public Employee(String name, String password) {
 
     this.name = name;
@@ -115,8 +128,14 @@ public class Employee {
     }
 
   }
-    /*
-    * Employee constructor for loading employee into DB
+
+  /**
+   * Constructor for Writing to Employee ArrayList of Employee DB table.
+   *
+   * @param name     Name of Employee
+   * @param userName Username of Employee.
+   * @param email    Email of Employee.
+   * @param password Password of Employee.
    */
   public Employee(String name, String userName, String email, String password) {
     this.name = name;
@@ -124,9 +143,10 @@ public class Employee {
     this.email = email;
     this.password = password;
   }
+
   /*
-  * Check for first and last name for entry
- */
+   * Check for first and last name for entry
+   */
   private int checkName(String name) {
     int nameLength = name.length();
     int hasSpace = 0;
@@ -142,8 +162,8 @@ public class Employee {
   }
 
   /*
-  * Check for valid password. Must constain upper, lower, and special character
- */
+   * Check for valid password. Must constain upper, lower, and special character
+   */
   private boolean isValidPassword(String password) {
 
     if (password == null) {
@@ -163,14 +183,23 @@ public class Employee {
 
     }
   }
-  /*
-  * Employee toString method
- */
+
+  /**
+   * Method for Outputting information of Employee objects.
+   *
+   * @return Formatted String of Employee class object fields.
+   */
   public String toString() {
     return "Employee Details" + '\n' + "Name : " + name + "\n" + "Username : " + userName + "\n"
         + "Email : " + email + "\n" + "Initial Password : " + password;
   }
 
+  /**
+   * Method for storing password to DB backwards for obscurity.
+   *
+   * @param password Takes in object field Password and reverses it through recursion.
+   * @return Returns password formatted in reverse.
+   */
   public String reverseString(String password) {
     if ((null == password) || (password.length() <= 1)) {
       return password;

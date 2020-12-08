@@ -1,4 +1,7 @@
 /**
+ * Enumeration object class used for identifying the item type of each Product class field itemType.
+ * JavaDoc error from method c.
+ *
  * @author Brandon Siegfried
  */
 

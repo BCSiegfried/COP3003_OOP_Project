@@ -1,7 +1,8 @@
 /**
+ * Class for screen.
+ *
  * @author Brandon Siegfried
  */
-
 public class Screen implements ScreenSpec {
 
   String resolution;
@@ -23,7 +24,7 @@ public class Screen implements ScreenSpec {
   }
 
 
-  public void setRefreshRate(int RefreshRate) {
+  public void setRefreshRate(int refreshRate) {
 
   }
 
@@ -44,6 +45,7 @@ public class Screen implements ScreenSpec {
   }
 
   /**
+   * toString method returns object information.
    *
    * @return object data toString method
    */

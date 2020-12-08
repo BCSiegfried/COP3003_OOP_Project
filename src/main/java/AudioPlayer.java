@@ -1,4 +1,7 @@
 /**
+ * Class which uses the MultiMediaControl interface. Child class of Product. Unused Getters and
+ * Setters.
+ *
  * @author Brandon Siegfried
  */
 
@@ -7,7 +10,7 @@ public class AudioPlayer extends Product implements MultimediaControl {
 
   private String supportedAudioFormats;
   private String supportedPlaylistFormats;
-  private String type;
+  /*private String type;*/ // unused field
 
 
   public String setSupportedAudioFormats() {
@@ -24,9 +27,15 @@ public class AudioPlayer extends Product implements MultimediaControl {
   public void getSupportedPlaylistFormats(String newPlaylist) {
 
   }
-  /*
-  * Audio player uses product super class constructor.
-  */
+
+  /**
+   * Constructor for AudioPlayer object Class.
+   *
+   * @param name                     Name of AudioPlayer.
+   * @param manufacturer             Manufacturer of AudioPlayer.
+   * @param supportedAudioFormats    Supported audio formats of AudioPlayer.
+   * @param supportedPlaylistFormats Supported Playlist formats of AudioPlayer.
+   */
   AudioPlayer(String name, String manufacturer, String supportedAudioFormats,
       String supportedPlaylistFormats) {
 
@@ -35,12 +44,19 @@ public class AudioPlayer extends Product implements MultimediaControl {
     this.supportedPlaylistFormats = supportedPlaylistFormats;
   }
 
+  /**
+   * Display AudioPlayer attributes.
+   *
+   * @return Formatted String of AudioPlayer object fields.
+   */
+
   @Override
   public String toString() {
-    return "Name: " + getName() + '\n' +
-        "Manufacturer: " + getManufacturer() + '\n' + "Type: "
-        + getItemType() + "\n" + "Supported Audio Formats: " + supportedAudioFormats +
-        '\n' + "Supported Playlist Formats: " + supportedPlaylistFormats;
+    return "Name: " + getName() + '\n'
+        + "Manufacturer: " + getManufacturer() + '\n' + "Type: "
+        + getItemType() + "\n"
+        + "Supported Audio Formats: " + supportedAudioFormats + '\n'
+        + "Supported Playlist Formats: " + supportedPlaylistFormats;
   }
 
   public void play() {

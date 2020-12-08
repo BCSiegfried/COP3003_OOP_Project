@@ -45,7 +45,7 @@
                      </GridPane>
                      <TableView fx:id="productTableView" layoutX="21.0" layoutY="177.0" prefHeight="200.0" prefWidth="377.0">
                        <columns>
-                           <TableColumn fx:id="productID" prefWidth="75.0" text="Id" />
+                           <TableColumn fx:id="productId" prefWidth="75.0" text="Id" />
                          <TableColumn fx:id="prodName" prefWidth="75.0" text="Name" />
                          <TableColumn fx:id="prodMan" prefWidth="115.0" text="Manufacturer" />
                            <TableColumn fx:id="prodType" prefWidth="111.0" text="Type" />

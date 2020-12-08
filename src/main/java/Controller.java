@@ -1,7 +1,3 @@
-/**
- * @author Brandon Siegfried
- */
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -27,6 +23,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * Controller for JavaFX.
+ *
+ * @author Brandon Siegfried
+ */
+
 public class Controller {
 
   @FXML
@@ -45,7 +47,7 @@ public class Controller {
   private TableView<Product> productTableView;
 
   @FXML
-  private TableColumn<Integer, Product> productID;
+  private TableColumn<Integer, Product> productId;
 
   @FXML
   private TableColumn<String, Product> prodName;
@@ -68,27 +70,34 @@ public class Controller {
   ArrayList<Employee> employeeArray = new ArrayList<>();
 
   //DB fields
-    /*
-    * Could not find a better way to implement
+  /*
+   * Could not find a better way to implement
+   * Javadoc error created from FINAL access modifiers
    */
   private static Statement statement;
   public Connection conn;
-  final String USER = "";
-  final String DB_URL = "jdbc:h2:./resources/ProductionProject";
+  static final String USER = "";
+  static final String DB_URL = "jdbc:h2:./resources/ProductionProject";
 
-
+  /**
+   * Method for setting up JavaFX application qualities.
+   *
+   * @throws SQLException SQL Exception for DB errors
+   * @throws IOException  I/O exception for failed input.
+   */
   public void initialize() throws SQLException, IOException {
     connectToDb();
-    SetupInterface();
-
-    //define observable list
-
+    setupInterface();
     setupProductLineTable();
-    // pulls records from the product DB and loads them into product list
     loadProductList();
     loadProductionLog();
   }
 
+  /**
+   * Connects to DB.
+   *
+   * @throws IOException for I/O exceptions.
+   */
   public static void connectToDb() throws IOException {
 
     //  Database credentials
@@ -115,8 +124,8 @@ public class Controller {
     }
   }
 
-    /*
-    * Adds product to DB.
+  /*
+   * Adds product to DB.
    */
   @FXML
   void addProduct(ActionEvent event) throws SQLException, IOException {
@@ -132,6 +141,11 @@ public class Controller {
     loadProductList();
   }
 
+  /**
+   * Method for executing SQL statements.
+   *
+   * @param sqlStatement Takes in a String parameter as the SQL statement.
+   */
   public static void sqlExecute(String sqlStatement) {
     try {
       statement.executeUpdate(sqlStatement);
@@ -142,18 +156,21 @@ public class Controller {
   }
 
   /*
-  * Method called on startup to initialize Tableview
- */
+   * Method called on startup to initialize Tableview
+   */
   void setupProductLineTable() {
-    productID.setCellValueFactory(new PropertyValueFactory<>("Id"));
+    productId.setCellValueFactory(new PropertyValueFactory<>("Id"));
     prodName.setCellValueFactory(new PropertyValueFactory<>("Name"));
     prodMan.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
     prodType.setCellValueFactory(new PropertyValueFactory<>("ItemType"));
   }
 
-  /*
-  * Called at startup and anytime a product is added. Removes items from product array and adds them to back with SQL query result set
- */
+  /**
+   * Fills Product ArrayList with Product SQL DB table entries.
+   *
+   * @throws SQLException for SQL DB interruption.
+   * @throws IOException  For I/O interruptions.
+   */
   public void loadProductList() throws SQLException, IOException {
 
     Properties prop = new Properties();
@@ -169,7 +186,7 @@ public class Controller {
         PreparedStatement ps = conn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
 
-        productArrayList.removeAll(productArrayList);
+        productArrayList.clear();
 
         while (rs.next()) {
           int id = rs.getInt("ID");
@@ -195,16 +212,19 @@ public class Controller {
     }
     System.out.println(productArrayList.size());
   }
-  /*
-  * Records productionLog object to ProductRecord DB table.
- */
+
+  /**
+   * Method used upon Record Product button pressed in tab 1 of the program's interface.
+   *
+   * @param event JavaFX button click.
+   * @throws SQLException Throws SQL Exceptions for DB interruptions.
+   */
   @FXML
   void buttonRecordProduction(ActionEvent event) throws SQLException {
-    int inventoryCount = 0;
+    int inventoryCount;
     ProductionRecord.inventoryCount = 0;
 
     for (int j = 0; j < Integer.parseInt(String.valueOf(productComboQuantity.getValue())); j++) {
-      //create a method which takes the current inventory amount from the production record arraylist.
       inventoryCount = 0;
       String query = "SELECT COUNT(PRODUCT_ID) FROM PRODUCTIONRECORD WHERE PRODUCT_ID = '"
           +
@@ -225,10 +245,12 @@ public class Controller {
 
       String date = recordObject.getDateProduced();
       String sql =
-          "INSERT INTO PRODUCTIONRECORD(PRODUCTION_NUM, PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES  ('"
+          "INSERT INTO PRODUCTIONRECORD(PRODUCTION_NUM, PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) "
+              + "VALUES"
+              + "  ('"
               + recordObject.getProductionNumber()
               + "','"
-              + recordObject.getProductID()
+              + recordObject.getProductId()
               + "','"
               + recordObject.getSerialNumber()
               + "','"
@@ -239,12 +261,15 @@ public class Controller {
 
       loadProductionLog();
 
-    } // create an arraylist of production record items, within the for loop add the item to the arraylist,
+    }
 
   }
-  /*
-  * loads production log array list and repopulates with SQL query. prints to third tab
- */
+
+  /**
+   * Method for writing to production log textField with ProductionLog DB table entries.
+   *
+   * @throws SQLException SQL Expection for DB interruptions
+   */
   public void loadProductionLog() throws SQLException {
     if (conn != null) {
       productionRecordArray.clear();
@@ -269,10 +294,11 @@ public class Controller {
       showProduction();
     }
   }
-    /*
-    * Sets values for production text field, combobox quantity, and combobox itemType
+
+  /**
+   * Sets up the user interface.
    */
-  public void SetupInterface() {
+  public void setupInterface() {
     productionLogToText.setEditable(false);
 
     productComboQuantity.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -283,11 +309,12 @@ public class Controller {
     productComboType.getItems().setAll(ItemType.values());
     productComboType.getSelectionModel().selectFirst();
   }
-    /*
-    * Alternative to ProductionRecord toString method.
-   *  SQL query finds product ID in products table matches product ID matches in productionrecord table.
-  *   enhanced for loop prints product name in lieu of product ID
- */
+
+  /**
+   * Populates Product ArrayList which populates the product tab.
+   *
+   * @throws SQLException Exception for SQL related interruptions.
+   */
   public void showProduction() throws SQLException {
     productionLogToText.setText("");
     String productName = "";
@@ -295,7 +322,7 @@ public class Controller {
 
       String sql = "SELECT NAME FROM PRODUCT WHERE ID = '"
           +
-          record.getProductID()
+          record.getProductId()
           + "'";
 
       statement = conn.createStatement();
@@ -329,10 +356,12 @@ public class Controller {
   @FXML
   private TextField passwordTextField;
 
-  @FXML
-    /*
-    * HCI measures for account creation. Determines if fields are blank. Inserts employee into Employee table
+  /**
+   * Takes in String Password and String Name to create account. Will determine in the user's input
+   * is correct.
    */
+
+  @FXML
   void createAccountButton(ActionEvent event) {
 
     if (nameTextField.getText().isBlank() || passwordTextField.getText().isBlank()) {
@@ -361,8 +390,13 @@ public class Controller {
     }
 
   }
-    /*
-    * result set pulls current employees.compares name and password stored for matching value. Notifies user if fields entered matches database entry.
+
+  /**
+   * Takes in user credentials entered into the text boxes and verifies the account's existence.
+   * Compares it to each object in the Employee ArrayList.
+   *
+   * @param actionEvent Login button action event.
+   * @throws SQLException Throws SQL exception for DB related interruptions.
    */
   public void loginButton(ActionEvent actionEvent) throws SQLException {
     if (nameTextField.getText().isBlank() || passwordTextField.getText().isBlank()) {

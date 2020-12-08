@@ -1,4 +1,6 @@
 /**
+ * Interface template for object class Product. Setter methods unused.
+ *
  * @author Brandon Siegfried
  */
 

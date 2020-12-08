@@ -1,4 +1,6 @@
 /**
+ * Object class for Product.
+ *
  * @author Brandon Siegfried
  */
 
@@ -45,7 +47,13 @@ public abstract class Product implements Item {
     return manufacturer;
   }
 
-
+  /**
+   * Constructor user for entering a product through the UI.
+   *
+   * @param name         name of product.
+   * @param itemType     enum classification of item type.
+   * @param manufacturer name of manufacturer.
+   */
   public Product(String name, ItemType itemType, String manufacturer) {
     this.name = name;
     this.itemType = itemType;
@@ -53,6 +61,14 @@ public abstract class Product implements Item {
 
   }
 
+  /**
+   * Constructor used for loading the product ArrayList.
+   *
+   * @param id           Identification of product.
+   * @param name         Name of product.
+   * @param itemtype     Enum item type of product.
+   * @param manufacturer Manufacturer of item type.
+   */
   public Product(int id, String name, ItemType itemtype, String manufacturer) {
     this.id = id;
     this.name = name;
@@ -65,30 +81,28 @@ public abstract class Product implements Item {
 
   }
 
-  ;
-
   public Product(String name, String manufacturer) {
     this.name = name;
     this.manufacturer = manufacturer;
   }
 
-  ;
-
-
+  /**
+   * Method for retrieving Product objects details.
+   *
+   * @return Object field declarations of class Product objects.
+   */
   public String toString() {
-    return "Name: " + name + "\n" +
-        "Manufacturer: " + manufacturer + "\n" +
-        "Type: " + itemType;
+    return "Name: " + name + "\n"
+        + "Manufacturer: " + manufacturer + "\n"
+        + "Type: " + itemType;
   }
+
 }
-  /*
-  * Widget child class for instantiating abstract class Product
+
+/**
+ * Child class of Product. Producing JavaDoc error from not existing within it's own class.
  */
 class Widget extends Product implements Item {
-
-  public Widget(String name, ItemType type, String manufacturer) {
-    super(name, type, manufacturer);
-  }
 
   public Widget(int id, String name, ItemType type, String manufacturer) {
     super(id, name, type, manufacturer);

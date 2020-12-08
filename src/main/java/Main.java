@@ -1,12 +1,14 @@
-/**
- * @author Brandon Siegfried
- */
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+/**
+ * This is the driver class.
+ *
+ * @author Brandon Siegfried
+ */
 
 public class Main extends Application {
 
